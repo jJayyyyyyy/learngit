@@ -1,0 +1,95 @@
+1. 1991 Linus Linux
+	2005 Git Linux社区
+
+2.
+mkdir learngit
+cd learngit
+pwd
+
+git init
+
+git add readme.txt
+git commit -m 'write a readme.txt'
+git status
+
+3.
+git diff HEAD -- readme.txt
+
+git help commit
+
+4.
+git log --pretty=oneline
+
+git reset --hard HEAD^
+git reset --hard commit_id
+git reflog
+
+5.撤销修改
+1).before add
+git checkout -- readme.txt
+
+2).before commit
+git reset HEAD readme.txt
+git checkout -- readme.txt
+
+3).after commit
+git reset --hard commit_id
+
+6.删除
+rm test.txt
+#git rm test.txt
+#git checkout -- readme.txt
+
+7.远程仓库
+git push origin master
+git clone <address>
+
+8.分支branch
+git checkout -b dev
+#git branch dev
+#git checkout dev
+
+#blablabla...
+
+git checkout master
+git merge dev
+git branch -d dev
+保持master主线清晰
+
+9.解决冲突
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
