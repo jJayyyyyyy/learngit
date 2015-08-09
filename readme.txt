@@ -9,3 +9,4 @@ Creating a new branch is quick AND simple.
 >>>>>>> feature1
 a new test-line for merge
 
+hello, there is a new function!
