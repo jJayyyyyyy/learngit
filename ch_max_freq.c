@@ -8,7 +8,7 @@
  *  so the most frequent character is (index + 'a')
  *
  *  time_complexity：O(n)
-*/
+ */
 #include <stdio.h>
 #include <string.h>
 
@@ -16,10 +16,10 @@ int main(){
     char s[128]={0};
     int count[26]={0};
     int len=0, i=0;
-    int max_num, max_ch;
+    int max_num, max_index;
     
     scanf("%s", s);
-    len = strlen(s);
+    len = (int)strlen(s);
     for(i=0; i<len; i++)
         count[(s[i]-'a')] += 1;
     
