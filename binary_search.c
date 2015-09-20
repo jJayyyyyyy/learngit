@@ -23,5 +23,16 @@ int main(){
     int array[Len_of_Array] = {1,2,3,4,5,6};
     int key = 6;
     
-    printf("%d", binary_search(array, 0, 5, key));
+    printf("Please input the key value you want to search: ");
+    scanf("%d", &key);
+    printf("key : %d\n", key);
+    printf("The array is: ");
+    for(size_t i=0; i<Len_of_Array; ++i)
+        printf("%d ", array[i]);
+    
+    int key_index = binary_search(array, 0, Len_of_Array-1, key);
+    if(key_index >= 0)
+        printf("\nThe index of key is: %d", key_index);
+    else
+        printf("\nError! Doesn't exist!");
 }
