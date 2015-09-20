@@ -3,7 +3,7 @@
 #include <stdio.h>
 #define	Len_of_Array 6
 
-int binary_search(int a[], int left, int right, int key){
+int binary_search(const int a[], int left, int right, int key){
     if(left <= right){
         int mid = (left+right)/2;
         
