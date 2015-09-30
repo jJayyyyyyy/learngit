@@ -55,6 +55,9 @@ ChainListType *ChainListAddFirst(ChainListType *head, DATA data){
 
 
 /*return addr where the <Node> that contains <key_string> is located
+ ************ should we merge Find and Insert??? *******
+ ************ what is the use of a SINGLE FIND?  *******
+ ************ or it's a gateway sometimes? to verify the identity? ******
  */
 ChainListType *ChainListFind(ChainListType *head, char key[]){
     ChainListType *p;
@@ -71,6 +74,8 @@ ChainListType *ChainListFind(ChainListType *head, char key[]){
 
 
 /*Insert node after where key is located
+ ****** and what is the use of this type?  return to what? return to who?*****
+ ****** is this return_type necessary?     ********
  */
 ChainListType *ChainListInsert(ChainListType *head, DATA data, char key[]){
     ChainListType *node, *p;
@@ -86,12 +91,16 @@ ChainListType *ChainListInsert(ChainListType *head, DATA data, char key[]){
     if(p != NULL){
         node->next = p->next;
         p->next = node;
+        printf("Node inserted!\n");
     }else{
         printf("Not found!");
         free(node);
     }
     
-    return NULL;
+    //Oh! SHIT!!!!!!!Init_return is NULL, but don't forget to modify
+    //to the exact DESIRED_VALUE to return!
+    //Not 'return NULL'!!! Dont forget!!!
+    return head;
 }
 
 
