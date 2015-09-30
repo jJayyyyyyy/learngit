@@ -2,7 +2,7 @@
 typedef struct{
     char key[15];
     char name[20];
-    int age;
+    int  age;
 }DATA;
 
 typedef struct Node{
@@ -24,6 +24,6 @@ int ChainListDelete(ChainListType *head, char key[]);
 int ChainListLength(ChainListType *head);
 
 
-ChainListType *ChainListInit(ChainListType *head);
+ChainListType *ChainListInit();
 
 void ChainListTraverse(ChainListType *head);
