@@ -64,11 +64,15 @@ ChainListType *ChainListFind(ChainListType *head, char key[]){
     
     p = head;
     while (p != NULL){
-        if (strcmp(p->data.key, key) == 0)//it returns 0 when equals
+        if (strcmp(p->data.key, key) == 0){//it returns 0 when equals
+            printf("Node found: ");
+            printf("%s, %s, %d\n", key, p->data.name, p->data.age);
             return p;//return addr where key is located
+        }
         p = p->next;
     }
     
+    printf("Node not found!\n");
     return NULL;
 }
 
