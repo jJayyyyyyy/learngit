@@ -14,18 +14,18 @@
 #define SIZE    15
 #define EMPTY   0
 
-
+/*自定义数据类型
+ */
 typedef struct{
     char name[15];
     int age;
 }DATA;
 
-
-/*data里面存放数据，后进先出，出栈后不用删除，下次直接覆盖即可
+/*data数组里面存放数据，后进先出，出栈后不用删除，下次直接覆盖即可
  *top_index用来指明栈顶序号，每次操作后更新
  */
 typedef struct stack{
-    DATA data[SIZE+1];
+    DATA data[SIZE+1];//DATA类型的data数组[1..SIZE]用于存放数据
     int top_index;
 }SeqStack;
 
