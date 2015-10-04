@@ -9,7 +9,8 @@
 #ifndef __test__stack__
 #define __test__stack__
 
-#define SIZE    15
+
+#define SIZE    3
 #define EMPTY   0
 
 /*自定义数据类型
@@ -27,5 +28,67 @@ typedef struct stack{
     int top_index;
 }SeqStack;
 
+//-Create and Initialize a new sequential stack
+//tested
+SeqStack *SeqStackInit();
+
+
+//--return 1 when successfully pushed, return 0 when failed
+//tested
+int SeqStackPush(SeqStack *stack, DATA data);
+
+//--先把栈顶下移，再弹出数据，若栈为空，则结束程序
+//tested
+DATA SeqStackPop(SeqStack *stack);
+
+//--返回栈顶数据，若栈为空，则结束程序
+//tested
+DATA SeqStackGetTop(SeqStack *stack);
+
+
+//---return 1 when empty, else return 0
+//tested
+int SeqStackIsEmpty(SeqStack *stack);
+
+//---return 1 when full, else return 0
+//tested
+int SeqStackIsFull(SeqStack *stack);
+
+
+
+//----Clear a stack, while the memory still can be used
+//没有释放内存使用权限，只是把栈顶序号赋为0，下次写入时直接覆盖即可
+//程序内部对这部分内存可读可写，其他程序对这部分内存只能读不能写
+//tested
+void SeqStackClear(SeqStack *stack);
+
+//----To release occupied memory
+//释放了内存使用权限，其他程序也可以用这部分内存了
+//tested
+void SeqStackFree(SeqStack *stack);
+
+
+
+
+
 
 #endif /* defined(__test__stack__) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
