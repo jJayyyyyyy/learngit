@@ -9,8 +9,6 @@
 #ifndef __test__stack__
 #define __test__stack__
 
-#include <stdio.h>
-#include <stdlib.h>
 #define SIZE    15
 #define EMPTY   0
 
