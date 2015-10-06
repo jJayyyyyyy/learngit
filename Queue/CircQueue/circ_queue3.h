@@ -24,5 +24,6 @@ void CircQueueFree(CircQueue *queue);
 int CircQueueIn(CircQueue *queue, DATA data);
 void CircQueueOut(CircQueue *queue, DATA *data_get);
 
+int CircQueueIsEmpty(CircQueue *queue);
 int CircQueueIsFull(CircQueue *queue);
 void CircQueueTraverse(CircQueue *queue);
