@@ -37,6 +37,7 @@ void CircQueueFree(CircQueue *queue){
 
 int CircQueueIn(CircQueue *queue, DATA data){
     if((queue->rear+1)%MAXSIZE == queue->front){
+        //判断是否已满
         printf("Queue is full!\n");
         return 0;
     }else{
@@ -47,6 +48,7 @@ int CircQueueIn(CircQueue *queue, DATA data){
 }
 
 void CircQueueOut(CircQueue *queue, DATA *data_get){
+    //判断是否为空
     if(queue->rear == queue->front){
         printf("Queue is empty!\n");
     }else{
@@ -56,6 +58,7 @@ void CircQueueOut(CircQueue *queue, DATA *data_get){
 }
 
 void CircQueueGetFront(CircQueue *queue, DATA *data_get){
+    //判断是否为空
     if(queue->rear == queue->front){
         printf("ueue is empty!\n");
     }else{
@@ -76,7 +79,18 @@ int CircQueueGetLen(CircQueue *queue){
     return (queue->rear - queue->front + MAXSIZE) % MAXSIZE;
 }
 
-
+void CircQueueTraverse(CircQueue queue){
+    int temp_front = queue->front;
+    
+    printf("\n");
+    //判断是否为空(为空表示遍历完成)
+    while((temp_front)%MAXSIZE != queue){
+        //按照 先读数据，再队首加1的规则
+        printf("%d\n", queue->data[temp_front]);
+        temp_front++;
+    }
+    
+}
 
 
 

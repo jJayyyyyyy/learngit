@@ -33,4 +33,6 @@ int CircQueueIsFull(CircQueue *queue);
 int CircQueueIsEmpty(CircQueue *queue);
 int CircQueueGetLen(CircQueue *queue);
 
+void CircQueueTraverse(CircQueue queue);
+
 #endif /* defined(__test__circ_queue__) */
