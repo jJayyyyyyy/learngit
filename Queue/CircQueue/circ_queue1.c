@@ -79,15 +79,15 @@ int CircQueueGetLen(CircQueue *queue){
     return (queue->rear - queue->front + MAXSIZE) % MAXSIZE;
 }
 
-void CircQueueTraverse(CircQueue queue){
+void CircQueueTraverse(CircQueue *queue){
     int temp_front = queue->front;
     
     printf("\n");
     //判断是否为空(为空表示遍历完成)
-    while((temp_front)%MAXSIZE != queue){
+    while((temp_front)%MAXSIZE != queue-rear){
         //按照 先读数据，再队首加1的规则
         printf("%d\n", queue->data[temp_front]);
-        temp_front++;
+        temp_front = (temp_front + 1) % MAXSIZE;
     }
     
 }
