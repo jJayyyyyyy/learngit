@@ -85,7 +85,7 @@ void CircQueueTraverse(CircQueue *queue){
     //判断是队列否为空(为空表示遍历完成)
     while((temp_front)%MAXSIZE != queue->rear){
         //按照 先队首加1，再读数据的规则
-        temp_front++;
+        temp_front = (temp_front + 1) % MAXSIZE;
         printf("%d\t", queue->data[temp_front]);
     }
     printf("\n");
