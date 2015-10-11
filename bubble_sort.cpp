@@ -2,6 +2,7 @@
 #include <stdio.h>
 using namespace std;
 
+//从后往前，每次把最小的放到未排序部分的前面
 void bubble_sort(int a[], int len){
 	for(int i=0; i<len; i++){
 		for(int j=len-1; j>i; j--){
