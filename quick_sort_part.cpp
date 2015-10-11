@@ -10,26 +10,26 @@ int quick_sort_part(int a[], int left, int right){
 		while(i<j && a[j]>key)
 			j -= 1;
 		if(i<j){
-			a[i] = a[j];
+			a[i] = a[j];//这个a[j]<key,所以要换到前面来
 			i += 1;
 		}
 		while(i<j && a[i]< key)
 			i += 1;
 		if(i<j){
-			a[j] = a[i];
+			a[j] = a[i];//这个a[i]>key,所以要换到后面去
 			j -= 1;
 		}
 	}
-	a[i] = key;
+	a[i] = key;//此时i=j了已经
 	
 	return i;
 }
 
 void quick_sort(int a[], int left, int right){
 	if(left < right){
-		int i = quick_sort_part(a, left, right);
-		quick_sort(a, left, i-1);
-		quick_sort(a, i+1, right);
+		int mid = quick_sort_part(a, left, right);
+		quick_sort(a, left, mid-1);
+		quick_sort(a, mid+1, right);
 	}
 }
 
