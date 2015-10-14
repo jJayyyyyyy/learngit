@@ -40,6 +40,8 @@ public:
                 temp[k++] = a[i++];
             else
                 temp[k++] = a[j++];
+            
+            //temp[k++] = (a[i]<a[j]) ? a[i++] : a[j++];
         }
         while(i <= mid)
             temp[k++] = a[i++];
