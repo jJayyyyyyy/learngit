@@ -1,4 +1,4 @@
-int BinSearch(int a[],int len, int key)
+int BinSearch(const int a[],int len, int key)
 {
     int left = 0,right = len-1;
     while (left <= right)
