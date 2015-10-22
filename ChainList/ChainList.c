@@ -7,7 +7,9 @@
  *Use *node to hold the data, *p to find the end of the ChainList
  */
 ChainListType *ChainListAddEnd(ChainListType *head, DATA data){
-    ChainListType *node, *p;
+    //TODO:
+    //*newNode, pFind;
+    ChainListType *node, *pFind;
     
     node = (ChainListType *)malloc(sizeof(ChainListType));
     if (node == NULL) {
@@ -22,13 +24,14 @@ ChainListType *ChainListAddEnd(ChainListType *head, DATA data){
         return head;
     }
     
-    p=head;
-    while (p->next != NULL)
-        p = p->next;
-    //Now *p comes to the end of the ChainList
-    p->next = node;
+    pFind=head;
+    while (pFind->next != NULL){
+        pFind = pFind->next;
+    }
+    //Now *pFind comes to the end of the ChainList
+    pFind->next = node;
     //
-    //p->next->next is p->next, which is NULL
+    //pFind->next->next is pFind->next, which is NULL
     
     return head;
 }
@@ -40,7 +43,7 @@ ChainListType *ChainListAddEnd(ChainListType *head, DATA data){
 ChainListType *ChainListAddFirst(ChainListType *head, DATA data){
     ChainListType *node;
     
-    node = (ChainListType *)alloca(sizeof(ChainListType));
+    node = (ChainListType *)malloc(sizeof(ChainListType));
     if (node == NULL) {
         printf("Fail to allocate memory for a new Node!");
         return head;
@@ -60,16 +63,16 @@ ChainListType *ChainListAddFirst(ChainListType *head, DATA data){
  ************ or it's a gateway sometimes? to verify the identity? ******
  */
 ChainListType *ChainListFind(ChainListType *head, char key[]){
-    ChainListType *p;
+    ChainListType *pFind;
     
-    p = head;
-    while (p != NULL){
-        if (strcmp(p->data.key, key) == 0){//it returns 0 when equals
+    pFind = head;
+    while (pFind != NULL){
+        if (strcmp(pFind->data.key, key) == 0){//it returns 0 when equals
             printf("Node found: ");
-            printf("%s, %s, %d\n", key, p->data.name, p->data.age);
-            return p;//return addr where key is located
+            printf("%s, %s, %d\n", key, pFind->data.name, pFind->data.age);
+            return pFind;//return addr where key is located
         }
-        p = p->next;
+        pFind = pFind->next;
     }
     
     printf("Node not found!\n");
@@ -82,7 +85,7 @@ ChainListType *ChainListFind(ChainListType *head, char key[]){
  ****** is this return_type necessary?     ********
  */
 ChainListType *ChainListInsert(ChainListType *head, DATA data, char key[]){
-    ChainListType *node, *p;
+    ChainListType *node, *pFind;
     
     node = (ChainListType *)malloc(sizeof(ChainListType));
     if (node == NULL) {
@@ -91,10 +94,10 @@ ChainListType *ChainListInsert(ChainListType *head, DATA data, char key[]){
     }
     
     node->data = data;
-    p = ChainListFind(head, key);
-    if(p != NULL){
-        node->next = p->next;
-        p->next = node;
+    pFind = ChainListFind(head, key);
+    if(pFind != NULL){
+        node->next = pFind->next;
+        pFind->next = node;
         printf("Node inserted!\n");
     }else{
         printf("Not found!");
@@ -111,22 +114,22 @@ ChainListType *ChainListInsert(ChainListType *head, DATA data, char key[]){
 /*
  */
 int ChainListDelete(ChainListType *head, char key[]){
-    ChainListType *node, *p;
+    ChainListType *pBefore, *pFind;
 
     //can't use ChainListFind(), because it only returns *p of Node_key
     //we've got to know the node that is ahead of Node_key
-    node = head;
-    p = head;
-    while(p != NULL){
-        if (strcmp(p->data.key, key) ==0) {
-            node->next = p->next;
-            free(p);
+    pBefore = head;
+    pFind = head;
+    while(pFind != NULL){
+        if (strcmp(pFind->data.key, key) ==0) {
+            pBefore->next = pFind->next;
+            free(pFind);
             return 1;
         }else{
-            //p is node->next
-            //use p to find key, then use node & p to delete Node_key
-            node = p;
-            p = p->next;
+            //pFind is pBefore->next
+            //use pFind to find key, then use pBefore and pFind to delete Node_key
+            pBefore = pFind;
+            pFind = pFind->next;
         }
     }
     
@@ -136,13 +139,13 @@ int ChainListDelete(ChainListType *head, char key[]){
 /*
  */
 int ChainListLength(ChainListType *head){
-    ChainListType *p;
+    ChainListType *pFind;
     int count = 0;
     
-    p = head;
-    while (p != NULL) {
+    pFind = head;
+    while(pFind != NULL){
         count++;
-        p = p->next;
+        pFind = pFind->next;
     }
     
     return count;
