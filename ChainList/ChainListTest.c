@@ -22,18 +22,18 @@ ChainListType *ChainListInit(ChainListType *head){
 }
 
 void ChainListTraverse(ChainListType *head){
-    ChainListType *p;
+    ChainListType *pTraverse;
     DATA data;
     
-    p = head;
-    if (p == NULL) {
+    pTraverse = head;
+    if (pTraverse == NULL) {
         printf("List is empty!\n");
     }else{
         printf("All the data is as follows.\n");
-        while (p != NULL) {
-            data = p->data;
+        while (pTraverse != NULL) {
+            data = pTraverse->data;
             printf("(%s, %s, %d)\n", data.key, data.name, data.age);
-            p = p->next;
+            pTraverse = pTraverse->next;
         }
     }
 }
