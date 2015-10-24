@@ -21,11 +21,11 @@ typedef struct{
 }DATA;
 
 /*data数组里面存放数据，后进先出，出栈后不用删除，下次直接覆盖即可
- *top_index用来指明栈顶序号，每次操作后更新
+ *top用来指明栈顶序号，每次操作后更新
  */
 typedef struct stack{
     DATA data[SIZE+1];//DATA类型的data数组[1..SIZE]用于存放数据
-    int top_index;
+    int top;
 }SeqStack;
 
 //-Create and Initialize a new sequential stack
