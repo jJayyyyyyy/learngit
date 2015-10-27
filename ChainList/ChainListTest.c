@@ -21,6 +21,20 @@ ChainListType *ChainListInit(ChainListType *head){
     return head;
 }
 
+int ChainListFree(ChainListType *head){
+    ChainListType *p, *q;
+
+    p = head;
+    while (p != NULL) {
+        q = p->next;
+        free(p);
+        p = q;
+    }
+    
+    return 1;
+}
+
+
 void ChainListTraverse(ChainListType *head){
     ChainListType *pTraverse;
     DATA data;

@@ -26,4 +26,6 @@ int ChainListLength(ChainListType *head);
 
 ChainListType *ChainListInit();
 
+int ChainListFree(ChainListType *head);
+
 void ChainListTraverse(ChainListType *head);
