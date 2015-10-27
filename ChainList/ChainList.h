@@ -19,7 +19,7 @@ ChainListType *ChainListFind(ChainListType *head, char key[]);
 
 ChainListType *ChainListInsert(ChainListType *head, DATA data, char key[]);
 
-int ChainListDelete(ChainListType *head, char key[]);
+int ChainListDeleteNode(ChainListType *head, char key[]);
 
 int ChainListLength(ChainListType *head);
 

@@ -113,7 +113,7 @@ ChainListType *ChainListInsert(ChainListType *head, DATA data, char key[]){
 
 /*
  */
-int ChainListDelete(ChainListType *head, char key[]){
+int ChainListDeleteNode(ChainListType *head, char key[]){
     ChainListType *pBefore, *pFind;
 
     //can't use ChainListFind(), because it only returns *p of Node_key
