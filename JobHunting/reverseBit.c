@@ -82,8 +82,6 @@ int ReverseNumber4(unsigned int number){
     return number;
 }
 
-
-
 int main(){
     unsigned int num=10;
     printf("%x\n", num);
