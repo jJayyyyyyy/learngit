@@ -5,7 +5,7 @@ void quick_sort(int a[], int left, int right){
 	if(left < right){
 		int i = left, j = right;
 		int key = a[i];
-        while(i < j){
+        	while(i < j){
 			while(i<j && a[j]>key)
 				j -= 1;
 			if(i < j){
