@@ -1,12 +1,10 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
 //(left to right) is (0 to n-1)  
 void quick_sort(int a[], int left, int right){
 	if(left < right){
 		int i = left, j = right;
 		int key = a[i];
-        
         while(i < j){
 			while(i<j && a[j]>key)
 				j -= 1;
@@ -21,7 +19,7 @@ void quick_sort(int a[], int left, int right){
 				j -= 1;
 			}
 		}
-		a[i] = key;//此时i=j了已经
+		a[i] = key;//此时i=j
 		quick_sort(a, left, i-1);
 		quick_sort(a, i+1, right);
 	}
@@ -37,4 +35,4 @@ int main(){
 	}
 	
 	return 1;
-
+}
