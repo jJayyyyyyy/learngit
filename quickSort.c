@@ -5,16 +5,19 @@ void quick_sort(int a[], int left, int right){
 	if(left < right){
 		int i = left, j = right;
 		int key = a[i];
-        	while(i < j){
-			while(i<j && a[j]>key)
-				j -= 1;
+        while(i < j){
+            while(i<j && a[j]>key){
+                j -= 1;
+            }
 			if(i < j){
 				a[i] = a[j];//这个a[j]<key,所以要换到前面来
 				i += 1;
 			}
-			while(i<j && a[i]<key)
+            
+            while(i<j && a[i]<key){
 				i += 1;
-			if(i < j){
+            }
+            if(i < j){
 				a[j] = a[i];//这个a[i]>key,所以要换到后面去
 				j -= 1;
 			}
