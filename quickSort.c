@@ -2,30 +2,31 @@
 
 //(left to right) is (0 to n-1)  
 void quick_sort(int a[], int left, int right){
-	if(left < right){
-		int i = left, j = right;
-		int key = a[i];
+    if(left < right){
+        int i = left, j = right;
+        int key = a[i];
+        
         while(i < j){
             while(i<j && a[j]>key){
                 j -= 1;
             }
-			if(i < j){
-				a[i] = a[j];//这个a[j]<key,所以要换到前面来
-				i += 1;
-			}
-            
+            if(i < j){
+                a[i] = a[j];//这个a[j]<key,所以要换到前面来
+                i += 1;
+            }
             while(i<j && a[i]<key){
-				i += 1;
+                i += 1;
             }
             if(i < j){
-				a[j] = a[i];//这个a[i]>key,所以要换到后面去
-				j -= 1;
-			}
-		}
-		a[i] = key;//此时i=j
-		quick_sort(a, left, i-1);
-		quick_sort(a, i+1, right);
-	}
+                a[j] = a[i];//这个a[i]>key,所以要换到后面去
+                j -= 1;
+            }
+        }
+        
+        a[i] = key;//此时i=j
+        quick_sort(a, left, i-1);
+        quick_sort(a, i+1, right);
+    }
 }
 
 int main(){
