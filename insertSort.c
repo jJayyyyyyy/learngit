@@ -1,9 +1,8 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
 //每次把未排序部分的第一个插入到有序部分的合适位置
 //把小的放前面来，最后升序排列
-void insert_sort(int a[], int len){
+void insertSort(int a[], int len){
 	int i,j;
 	int key;
 	for(j=1; j<len; j++){
