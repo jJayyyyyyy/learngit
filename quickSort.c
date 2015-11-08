@@ -7,17 +7,17 @@ void quick_sort(int a[], int left, int right){
         int key = a[i];
         
         while(i < j){
-            while(i<j && a[j]>key){
+            while(i<j && key<a[j]){
                 j -= 1;
             }
-            if(i < j){
+            if(i<j){
                 a[i] = a[j];//这个a[j]<key,所以要换到前面来
                 i += 1;
             }
-            while(i<j && a[i]<key){
+            while(i<j && key>a[i]){
                 i += 1;
             }
-            if(i < j){
+            if(i<j){
                 a[j] = a[i];//这个a[i]>key,所以要换到后面去
                 j -= 1;
             }
