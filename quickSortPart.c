@@ -2,25 +2,26 @@
 
 //(left to right) is (0 to n-1)  
 int quickSortPart(int a[], int left, int right){
-	int i=left, j=right;
-	int key = a[i];
-
-	while(i<j){
+    int i=left, j=right;
+    int key = a[i];
+    
+    while(i<j){
         while(i<j && a[j]>key){
             j--;
         }
-		if(i<j){
-			a[i] = a[j];//这个a[j]<key,所以要换到前面来
-			i++;
-		}
-        while(i<j && a[i]< key){
-			i++;
+        if(i<j){
+            a[i] = a[j];//这个a[j]<key,所以要换到前面来
+            i++;
         }
-		if(i<j){
-			a[j] = a[i];//这个a[i]>key,所以要换到后面去
-			j--;
-		}
-	}
+        while(i<j && a[i]< key){
+            i++;
+        }
+        if(i<j){
+            a[j] = a[i];//这个a[i]>key,所以要换到后面去
+            j--;
+        }
+    }
+    
 	a[i] = key;//此时i=j了已经
 	
 	return i;
