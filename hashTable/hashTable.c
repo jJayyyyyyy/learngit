@@ -16,7 +16,7 @@ void hashInsert(int hash[], int data) {
     hash[i] = data;
 }
 
-void hashCreate(int hash[], int data[], int len){
+void hashCreate(int hash[], int data[], int lenData){
     for(int i=0; i<len; i++) {
         hashInsert(hash, data[i]);
     }
@@ -39,7 +39,6 @@ int hashSearch(int hash[], int key) {
         //hash[i]=key 找着了，返回下标地址
         return i;
     }
-    
 }
 
 
