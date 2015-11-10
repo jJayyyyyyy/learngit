@@ -1,5 +1,7 @@
+#client.py
 #python2.7
 import socket
+
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 host = '192.168.1.102'
 port = 8000
