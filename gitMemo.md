@@ -1,5 +1,4 @@
-## 11.
-feature分支
+## 11.feature分支
 每添加一个新功能，最好新建一个feature_name分支，在上面开发，完成后，合并，最后删除该
 feature分支
 合并后删除 git branch -d feature_name
@@ -84,6 +83,6 @@ blablabla...
 	~$ git commit -m 'write a readme.txt'
 	~$ git status
 
-## 1. 
+## 1. 故事
 	1991 Linus Linux
 	2005 Git Linux社区
