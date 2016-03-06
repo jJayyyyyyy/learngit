@@ -1,7 +1,8 @@
 #!/bin/sh
 
 folder=~/Documents
-
+#首先要移动到这个目录
+#要不然下面的 ..也没法用
 cd $folder
 cd temp
 
