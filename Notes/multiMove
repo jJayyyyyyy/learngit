@@ -1,0 +1,10 @@
+#!/bin/sh
+
+folder=~/Documents
+
+cd $folder
+cd temp
+
+for filename in *.out; do
+	mv $filename ..
+done
