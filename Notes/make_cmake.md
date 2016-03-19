@@ -1,7 +1,10 @@
 # `make` and `cmake`
 
 * [ref1](http://blog.csdn.net/shaoxiaohu1/article/details/9179715)  
-  [ref2](http://my.oschina.net/xunxun/blog/86781)
+  [ref2](http://my.oschina.net/xunxun/blog/86781)  
+  [3.](https://www.daniweb.com/programming/software-development/threads/492795/help-with-understanding-cmake)  
+  [4. What is the difference between make and gcc?](http://stackoverflow.com/questions/768373/what-is-the-difference-between-make-and-gcc)  
+  
 
  大家都知道，写程序大体步骤为：
  
